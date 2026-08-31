@@ -1,49 +1,253 @@
+/* global.css */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html {
-  height: 100%;
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --vermelho-carmesim: #990000;  /* Vermelho profundo, acadêmico e forte */
+  --vermelho-vivo: #e60000;      /* Detalhes e interações */
+  --bg-claro: #fcfcfd;           /* Branco gelo para o fundo */
+  --preto-antracite: #111116;    /* Contraste pesado de tipografia */
+  --borda-fina: #e4e4e7;
 }
 
 * {
-  box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-a {
-  color: inherit;
+body {
+  background-color: var(--bg-claro);
+  color: var(--preto-antracite);
+  min-height: 100vh;
+}
+
+/* --- HEADER ARQUITETÔNICO EM COLUNAS --- */
+.site-header {
+  border-bottom: 1px solid var(--preto-antracite);
+}
+
+.header-container {
+  max-width: 1500px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 350px 1fr; /* Divide o topo de forma assimétrica */
+}
+
+.logo-box {
+  padding: 2rem;
+  border-right: 1px solid var(--preto-antracite);
+  background-color: var(--preto-antracite);
+  color: #fff;
+}
+
+.logo-box h1 {
+  font-size: 1.3rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.logo-box h1 span {
+  color: var(--vermelho-vivo);
+}
+
+.nav-box {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 2rem;
+}
+
+.nav-lista {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.nav-link {
+  color: var(--preto-antracite);
   text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.2s;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+.nav-link:hover {
+  color: var(--vermelho-carmesim);
+}
+
+/* --- LAYOUT ASSIMÉTRICO (PAINÉIS DINÂMICOS) --- */
+.conteudo-principal {
+  max-width: 1500px;
+  margin: 0 auto;
+  display: grid;
+  /* Cria uma malha de colunas desiguais para quebrar o padrão comum */
+  grid-template-columns: 350px 1fr 1fr; 
+  min-height: calc(100vh - 80px);
+}
+
+/* Coluna da Esquerda: O Manifesto do Portal */
+.painel-manifesto {
+  border-right: 1px solid var(--preto-antracite);
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fff;
+}
+
+.manifesto-topo h2 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.manifesto-topo h2 mark {
+  background: none;
+  color: var(--vermelho-carmesim);
+}
+
+.manifesto-rodape p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #52525b;
+}
+
+/* Seção da Direita: O Painel de Blocos Conectados (Bento Grid) */
+.painel-operacional {
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+/* Configuração Individual de Cada Bloco */
+.bloco-sistema {
+  padding: 3.5rem;
+  text-decoration: none;
+  color: var(--preto-antracite);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+/* Linhas divisórias internas do Grid para parecer uma estrutura contínua */
+.bloco-sistema:nth-child(1) { border-right: 1px solid var(--preto-antracite); border-bottom: 1px solid var(--preto-antracite); }
+.bloco-sistema:nth-child(2) { border-bottom: 1px solid var(--preto-antracite); }
+.bloco-sistema:nth-child(3) { border-right: 1px solid var(--preto-antracite); }
+
+/* Estilização interna dos blocos */
+.bloco-tag {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--vermelho-carmesim);
+}
+
+.bloco-titulo {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.bloco-descricao {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #52525b;
+}
+
+.bloco-seta {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-top: 3rem;
+  align-self: flex-start;
+  transition: transform 0.3s;
+}
+
+/* --- EFEITOS INTERATIVOS PREMIUM --- */
+.bloco-sistema:hover {
+  background-color: var(--vermelho-carmesim);
+  color: #ffffff;
+}
+
+.bloco-sistema:hover .bloco-tag,
+.bloco-sistema:hover .bloco-descricao {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.bloco-sistema:hover .bloco-seta {
+  transform: translateX(10px);
+}
+
+/* Responsividade Completa para Telas Menores */
+@media (max-width: 1024px) {
+  .header-container, .conteudo-principal {
+    grid-template-columns: 1fr;
+  }
+  .logo-box, .painel-manifesto, .bloco-sistema {
+    border-right: none !important;
+  }
+  .painel-operacional {
+    grid-column: span 1;
+    grid-template-columns: 1fr;
+  }
+  .bloco-sistema {
+    border-bottom: 1px solid var(--preto-antracite) !important;
   }
 }
+/* Adicione ou atualize no final do seu global.css */
+
+.manifesto-parceria {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px dashed var(--preto-antracite);
+}
+
+.parceria-titulo {
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #71717a;
+  margin-bottom: 1rem;
+}
+
+.parceria-logos {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem; /* Espaço uniforme entre os elementos */
+}
+
+.img-parceiro {
+  height: 24px; /* Tamanho ligeiramente reduzido para manter o equilíbrio com os dois juntos */
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.5;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Divisória vertical minimalista entre o SESI e o SENAI */
+.parceria-divisor {
+  width: 1px;
+  height: 20px;
+  background-color: var(--borda-fina);
+}
+
+/* Quando o usuário passa o mouse na barra lateral, as marcas ganham vida e cor simultaneamente */
+.painel-manifesto:hover .img-parceiro {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+

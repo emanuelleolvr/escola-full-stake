@@ -251,3 +251,166 @@ body {
   opacity: 1;
 }
 
+/* Configurações base globais (opcional se já tiver) */
+body {
+  font-family: 'Arial', 'Segoe UI', sans-serif;
+  background-color: #fcfcfc;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Centralização e espaçamento da página de cadastro */
+.container-cadastro {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.container-cadastro h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111111;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #eaeaea;
+  padding-bottom: 10px;
+}
+
+/* Estrutura do formulário */
+.form-cadastro {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Grupo de controle (Label em cima, Input embaixo) */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #555555;
+}
+
+/* Estilização dos Inputs modernos */
+.form-group input {
+  padding: 12px 14px;
+  font-size: 15px;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+  background-color: #fafafa;
+}
+
+/* Efeito ao focar no campo de digitação */
+.form-group input:focus {
+  border-color: #e6231c; /* Cor vermelha combinando com a logo PORTALEDU */
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(230, 35, 28, 0.1);
+}
+
+/* Botão de envio elegante */
+.btn-enviar {
+  margin-top: 10px;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #111111; /* Cor preta combinando com a logo */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-enviar:hover {
+  background-color: #e6231c; /* Transiciona para vermelho ao passar o mouse */
+}
+
+
+/* Centralização e espaçamento da página de listagem */
+.container-lista {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.container-lista h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111111;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #eaeaea;
+  padding-bottom: 10px;
+}
+
+/* Garante rolagem lateral se a tela for muito pequena */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Configurações estruturais da tabela */
+.tabela-alunos {
+  width: 100%;
+  border-collapse: collapse; /* Remove espaços duplos entre as bordas */
+  text-align: left;
+}
+
+/* Estilização do cabeçalho da tabela */
+.tabela-alunos th {
+  background-color: #111111; /* Cor preta padrão do sistema */
+  color: #ffffff;
+  padding: 14px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase; /* Deixa os títulos em maiúsculo */
+  letter-spacing: 0.5px;
+}
+
+/* Arredonda as pontas do cabeçalho */
+.tabela-alunos th:first-child {
+  border-top-left-radius: 6px;
+}
+.tabela-alunos th:last-child {
+  border-top-right-radius: 6px;
+}
+
+/* Estilização das células de dados */
+.tabela-alunos td {
+  padding: 14px 16px;
+  font-size: 15px;
+  color: #444444;
+  border-bottom: 1px solid #eaeaea;
+}
+
+/* Alinhamento otimizado: IDs e RAs ficam melhores centralizados */
+.tabela-alunos th:first-child, 
+.tabela-alunos td:first-child,
+.tabela-alunos th:last-child,
+.tabela-alunos td:last-child {
+  text-align: center;
+}
+
+/* Efeito zebrado (linhas alternadas) */
+.tabela-alunos tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+/* Destaca a linha quando o usuário passa o mouse por cima */
+.tabela-alunos tbody tr:hover {
+  background-color: #f1f1f1;
+  transition: background-color 0.2s ease-in-out;
+}
+

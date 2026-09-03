@@ -45,7 +45,7 @@ export default function Principal() {
           <Link href="/cadaaluno" className="bloco-sistema">
             <div>
               <span className="bloco-tag">[ Registro ]</span>
-              <h3 className="bloco-titulo">Matrícula de Alunos</h3>
+              <h3 className="bloco-titulo">Cadastro de Alunos</h3>
               <p className="bloco-descricao">Ingresso e documentação básica de novos discentes.</p>
             </div>
             <div className="bloco-seta">→</div>

@@ -14,7 +14,7 @@ export default function Header() {
         <nav className="nav-box">
           <ul className="nav-lista">
             <li><Link href="/" className="nav-link">Início</Link></li>
-            <li><Link href="/cadaaluno" className="nav-link">Matrícula</Link></li>
+            <li><Link href="/cadaaluno" className="nav-link">Cadastro</Link></li>
             <li><Link href="/listaaluno" className="nav-link">Estudantes</Link></li>
             <li><Link href="/notaaluno" className="nav-link">Notas</Link></li>
             <li><Link href="/listanota" className="nav-link">Boletins</Link></li>
